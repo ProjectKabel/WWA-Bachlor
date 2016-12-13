@@ -1,0 +1,152 @@
+%!TEX root = konvergenz.tex
+
+\chapter{Konvergenzkriterien}
+\label{chapter-convergence}
+
+In der Analysis ist ein Konvergenzkriterium ein Kriterium, mit dem die Konvergenz einer Folge oder Reihe bewiesen werden kann. Insbesondere sind damit Kriterien für die Konvergenz reeller Folgen oder Reihen gemeint. Mit einigen dieser Kriterien kann auch die Divergenz einer Folge oder Reihe nachgewiesen werden \cite{confcit}.
+In Wirklichkeit stammt der gesamte Block aus Wikipedia.
+
+\section{Konvergenzkriterien für Folgen}
+
+Wichtige Konvergenzkriterien für Folgen sind:
+\begin{itemize}  
+\item Monotoniekriterium: Eine monotone Folge reeller Zahlen konvergiert genau dann, wenn sie beschränkt ist. 
+\item Cauchy-Kriterium: Eine Folge reeller oder komplexer Zahlen konvergiert genau dann, wenn sie eine Cauchy-Folge ist.
+\item  Sandwichkriterium: Eine Folge reeller Zahlen konvergiert, wenn sie nach unten und nach oben durch konvergente Folgen abgeschätzt werden kann, die den gleichen Grenzwert habe \ldots 
+\end{itemize}
+
+\section{Konvergenzkriterien für Reihen}
+
+Für Reihen werden drei Arten von Konvergenzkriterien unterschieden:
+\begin{itemize}
+\item Direkte Kriterien, die aus Eigenschaften der Partialsummenfolge der Reihe auf Konvergenz schließen,
+\item Vergleichskriterien 1. Art, die den Absolutbetrag bzw. die Norm der Reihenglieder mit einer bekannten Reihe vergleichen, und
+\item Vergleichskriterien 2. Art, die die Quotienten der Absolutbeträge aufeinanderfolgender Glieder mit den entsprechenden Quotienten einer bekannten Reihe vergleichen.
+\end{itemize}
+
+Die obige Tabelle gibt einen Überblick über bekannte Konvergenzkriterien. Die Kriterien ermöglichen unterschiedliche Aussagen: Einige erlauben nur den Schluss auf Konvergenz, mit anderen kann auch Divergenz bewiesen werden, einige zeigen absolute Konvergenz, andere nur Konvergenz (aus absoluter Konvergenz folgt Konvergenz, aber nicht umgekehrt). Zudem erlauben verschiedene Kriterien eine Abschätzung des Grenzwerts oder eine Fehlerabschätzung.
+
+\begin{table}
+\centering
+\caption{Überblick über bekannte Konvergenzkriterien}
+\label{table-overview-conv}
+\begin{tabular}{lccccccr}
+\hline
+                  & nur für &       &      &        & Ab-     & Fehlerab- &           \\
+                  & monot.  &       &      & absol. & schätz- & schätz-   &           \\
+Kriterum          & Folgen  & Konv. & Div. & Konv.  & ung     & ung       & Art       \\ \hline
+Nullfolgenkrit.   &         &       & x    &        &         &           & Di- \\
+Monotoniekrit.    &         & x     &      & x      &         &           & rektes \\
+Leibniz-Krit.     & x       & x     &      &        & x       & x         &      Krit.     \\
+Cauchy-Krit.      &         & x     & x    &        &         &           &           \\
+Abel-Krit.        & x       & x     &      &        &         &           &           \\
+Dirichlet-Krit.   & x       & x     &      &        &         &           &           \\ \hline 
+Majorantenkrit.   &         & x     &      & x      &         &           & Ver-      \\
+Minorantenkrit.   &         &       & x    &        &         &           & gleichs-  \\
+Wurzelkrit.       &         & x     & x    & x      &         & x         & krit. \\
+Integralkrit.     & x       & x     & x    & x      & x       &           & 1. Art    \\
+Verdichtungskrit. & x       & x     & x    & x      &         &           &           \\
+Grenzwertkrit.    &         & x     & x    &        &         &           &           \\ \hline 
+Quotientenkrit.   &         & x     & x    & x      &         & x         &  Ver-      \\
+Gauß-Krit.        &         & x     & x    & x      &         &           & gleichs-  \\
+Raabe-Krit.       &         & x     & x    & x      &         &           & krit. \\
+Kummer-Krit.      &         & x     & x    & x      &         &           & 2. Art    \\
+Bertrand-Krit.    &         & x     & x    & x      &         &           &           \\
+Ermakoff-Krit.    & x       & x     & x    & x      &         &           &          
+\end{tabular}
+\end{table}
+\newpage
+
+\section{Monotoniekriterium für Folgen}
+Damit wir noch in den Genuss kommen, weitere LaTeX-Funktionen zu implementieren, ist die etwas genauere Analyse des Monotoniekriteriums ebenfalls Teil dieser Bachehler-Arbeit.\\
+Das Monotoniekriterium, auch Hauptkriterium oder Kriterium der monotonen Konvergenz, ist in der Mathematik ein wichtiges Konvergenzkriterium für Folgen und Reihen. Mit dem Monotoniekriterium kann die Konvergenz einer beschränkten und monoton wachsenden oder fallenden Folge reeller Zahlen nachgewiesen werden, ohne dass ihr genauer Grenzwert bekannt ist. Entsprechendes gilt auch für Reihen mit nichtnegativen oder nichtpositiven Summanden.
+
+Das Monotoniekriterium für Folgen lautet:
+
+    Eine monoton wachsende Folge reeller Zahlen konvergiert genau dann gegen einen Grenzwert, wenn sie nach oben beschränkt ist.
+
+Da das Konvergenzverhalten einer Folge nicht von den ersten Folgengliedern abhängt, reicht es dabei aus, dass sich die Folge ab einem bestimmten Folgenglied monoton verhält. 
+
+Gibt es also in einer Folge $( a\textsubscript{n} )$  reeller Zahlen einen Index $N \in \mathbb{N}$, sodass
+
+$a \textsubscript{n} \leq a \textsubscript{n+1}$ \\
+
+für alle $n \leq N$ ist und gibt es weiter eine reelle Schranke $K$, sodass\\
+
+$a \textsubscript{n} \leq K$ \\
+
+für alle $n \geq N$ ist, dann konvergiert diese Folge und für den Grenzwert gilt
+
+$ \lim\limits_{n \to \infty} a\textsubscript{n} \leq K$.\\
+
+Analog dazu konvergiert eine monoton fallende Folge genau dann, wenn sie nach unten beschränkt ist, und ihr Grenzwert ist dann mindestens so groß wie die untere Schranke. Mit dem Monotoniekriterium kann somit die Existenz des Grenzwerts einer monotonen Folge nachgewiesen werden, ohne dass der genaue Grenzwert bekannt ist.
+
+\newpage
+
+\begin{figure}
+  \centering
+	\includegraphics[width=0.8\textwidth]{pdfs/monotonie\imagesuffix}
+  \caption[MonotonieKriterium in Action]{Nach dem Monotoniekriterium konvergiert eine monoton fallende, nach unten beschränkte Folge gegen einen Grenzwert.}
+  \label{monotoni_1}
+\end{figure}
+
+\textbf{Beispiel}
+
+Die Folge mit der Vorschrift
+
+$a_{n} ={\frac {n}{n+1}}$
+
+ist monoton wachsend, da
+
+$a_{n}={\frac {n}{n+1}}={\frac {n(n+2)}{(n+1)(n+2)}}<{\frac {n(n+2)+1}{(n+1)(n+2)}}={\frac {(n+1)^{2}}{(n+1)(n+2)}}={\frac {n+1}{n+2}}=a_{n+1}$
+
+und es gilt
+
+$a_{n}={\frac {n}{n+1}}={\frac {n+1-1}{n+1}}=1-{\frac {1}{n+1}}<1$
+
+für alle $n$. Somit konvergiert die Folge gegen einen Grenzwert mit
+
+$ \lim\limits_{n \to \infty} a_{n} \leq 1$.
+
+
+Wie man an diesem Beispiel sieht kann der Grenzwert einer Folge gleich der angegebenen Schranke sein, selbst wenn jedes Folgenglied echt kleiner als die Schranke ist.
+\newpage
+\begin{proof}
+Es reicht aus, den Fall einer monoton wachsenden und nach oben beschränkten Folge $(a_{n})$ zu betrachten. Sei
+
+$a=\sup \left\{a_{n}\mid n\geq N\right\}$
+
+und $\varepsilon >0$ beliebig gewählt. Da $a-\varepsilon$ keine obere Schranke der Folge ab dem Index $N$ ist, existiert ein Index $M\geq N$ mit
+
+$a-\varepsilon < a_{M} \leq a$.
+
+Nachdem die Folge $(a_{n})$ ab dem Index $N$ monoton wachsend ist, gilt damit
+
+$a-\varepsilon < a_{m} \leq a$
+
+für alle $m > M$. Also ist
+
+$|a_{m}-a|=a-a_{m}<\varepsilon$
+
+und somit konvergiert die Folge monoton gegen $a$.
+
+Umgekehrt ist eine monoton fallende, konvergente Folge durch ihren Grenzwert nach unten beschränkt.
+\end{proof}
+
+\textbf{Anwendung}	\\
+
+In der Praxis wird das Monotoniekriterium oft auch in der Form angewendet, dass man zu einer monoton wachsenden Folge $(a_{n})$ eine monoton fallende Folge $(b_{n})$ findet, die $ a_{n}\leq b_{n}$ für alle $n\geq N$ erfüllt. Dann konvergieren sowohl $(a_{n})$ als auch $(b_{n})$ und es gilt
+
+$\lim\limits_{n \to \infty} a_{n}\leq \lim\limits_{n \to \infty }b_{n}$.
+
+Beispielsweise ist die zur Definition der eulerschen Zahl verwendete Folge
+
+$a_{n}=\left(1+{\frac {1}{n}}\right)^{n}$
+
+monoton wachsend und die Folge
+
+$b_{n}=\left(1+{\frac {1}{n-1}}\right)^{n}$
+
+monoton fallend. Nachdem $a_{n}<b_{n}$ gilt, konvergieren beide Folgen. Bildet (wie in diesem Beispiel) $b_{n}-a_{n}$ eine Nullfolge, so liegt eine Intervallschachtelung vor und es gilt sogar
+
+$\lim\limits_{n \to \infty}a_{n}=\lim \limits_{n \to \infty}b_{n}$. 

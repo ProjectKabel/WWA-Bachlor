@@ -1,0 +1,59 @@
+%!TEX root = taylor.tex
+
+\chapter{Taylorpolynom}
+\label{chapter-taylor}
+
+In der Analysis ist ein Taylor-Polynom ein Polynom, mit dem wir uns Funktionen in der Umgebung eines Punktes annähern können. Dies wird auch als \textbf{Taylor-Näherung} bezeichnet \cite{wiki:taylor}.
+
+
+\section{Annäherung via Tagente}
+
+Haben wir eine differenzierbare Funktion $f$ welche an einem beliebigen Momentum $a$ durch ein Polynom ersten Grades geschnitten wird, können wir die Annäherung über eben jene Tagente vollführen. \\
+Betrachten wir die folgende Formel: $T_1 f(x; a) = f(a) + f'(a)(x-a)$ \\
+Wenn $x = a$ ist, dann ist gegeben, dass die Funktionswerte und die Werte der 1. Ableitung (= Steigung) von $f(x)$ und $T_1 f(x; a)$ übereinstimmen: $f(a) = T_1 f(a; a), f'(a) = T_1' f(a; a)$. 
+
+Wenn man den Rest $R_1 f(x; a) := f(x) - T_1 f(x; a)$ definiert, so gilt $f(x) = T_1 f(x; a) + R_1 f(x; a)$. Die Funktion $T_1 f(x; a)$ approximiert $f$ in der Nähe der Stelle $x=a$ in dem Sinne, dass für den Rest  gilt
+:$(1) ~ \lim_{x \to a} \frac{R_1 f(x; a)}{x-a} = \lim_{x \to a} \frac{f(x) - T_1 f(x; a)}{x - a}= \lim_{x \to a} \frac{f(x) - f(a)}{x - a} - f'(a) = 0$.
+
+\section{Annäherung durch Schmiegparabel}
+
+Sollte unsere Funktion $f$ zweimal differenzierbar sein, so ermöglicht sich eine genauere Annäherung, auch wenn diese mehr Rechenleistung erfordert. \\
+Nehmen wir dazu ein quadratisches Polynom $T_2 f(x; a)$ mit der Vorrausetzung \\ $T_2'' f(a; a) = f''(a)$. \\
+Leiten wir $T_2 f(x; a) = a_0 + a_1 (x-a) + a_2 (x-a)^2$ ab, kommen wir zu $a_0 = f(a), a_1 = f'(a)$ und bei erneuter Ableitung zu $a_2 = \frac{1}{2} f''(a)$. \\ 
+Daraus folgt dann $T_2 f(x; a) = f(a) + f'(a)(x-a) + \frac{1}{2} f''(a)(x-a)^2$.
+
+Diese Näherungsfunktion bezeichnet man auch als Schmiegparabel.
+
+Man definiert nun dazu den passenden Rest $R_2 f(x; a) := f(x) - T_2 f(x; a)$, sodass wieder $f(x) = T_2 f(x; a) + R_2 f(x; a)$. Dann erhält man, dass die Schmiegparabel die gegebene Funktion bei $x=a$ in der Tat besser approximiert, da nun (mit \textbf{der Regel von L’Hospital}):
+ $\lim_{x \to a} \frac{R_2 f(x; a)}{(x-a)^2} = \lim_{x \to a} \frac{f(x) - f(a) - f'(a)(x - a)}{(x - a)^2} - \frac{1}{2}f''(a) = \lim_{x \to a} \frac{f'(x) - f'(a)}{2(x - a)} - \frac{1}{2}f''(a) = 0$
+gilt.
+
+Annäherung durch Polynome vom Grad n
+
+Dieses Vorgehen lässt sich nun leicht auf Polynome n ${\displaystyle n}$ n-ten Grades $T n ( x ) {\displaystyle T_{n}(x)} T_n(x)$ verallgemeinern: Hier soll gelten
+
+$T_{n}f(a;a)=f(a),\ T_{n}'f(a;a)=f'(a),\ \ldots ,\ T_{n}^{(n)}f(a;a)=f^{(n)}(a)$.
+
+
+
+Es ergibt sich \
+
+$T_{n}f(x;a)=f(a)+{\frac {f'(a)}{1!}}(x-a)+{\frac {f''(a)}{2!}}(x-a)^{2}+\ldots +{\frac {f^{(n)}(a)}{n!}}(x-a)^{n}$.
+\
+Mit der Regel von L’Hospital finden wir außerdem 
+
+$\lim _{x\to a}{\frac {f(x)-T_{n}f(x;a)}{(x-a)^{n}}}=\lim _{x\to a}{\frac {f'(x)-T_{n}'f(x;a)}{n(x-a)^{n-1}}}$
+
+Daher ergibt sich mit vollständiger Induktion über $n$, dass für $R_{n}f(x;a)=f(x)-T_{n}f(x;a)$ gilt:
+
+$\lim_{x \to a} \frac{R_n f(x; a)}{(x-a)^n} = 0$. 
+
+\begin{figure}
+  \centering
+	\includegraphics[width=0.8\textwidth]{pdfs/sin\imagesuffix}
+  \caption[Taylor bei der Arbeit]{zeigt die Graphen einiger Taylorpolynome des Sinus um Entwicklungsstelle $0$ für $n=1,3,5,15$. Der Graph zu $n=\infty$ gehört zur Taylorreihe, die mit der Sinusfunktion übereinstimmt..}
+  \label{sin_1}
+\end{figure}
+
+
+    

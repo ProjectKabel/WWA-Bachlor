@@ -1,0 +1,59 @@
+\documentclass{scrbook}
+
+\input{stylesheets/style}
+\input{stylesheets/macros}
+
+% Set title and author used in the PDF meta data
+\hypersetup{
+  pdftitle={Analysis Grundkurs},
+  pdfauthor={Kurt Knösebrecht}
+}
+
+% Depending on which of the following two color schemes you import your thesis will be in color or grayscale. I recommend to generate a colored version as a PDF and a grayscale version for printing.
+
+\input{stylesheets/schema-color}
+%\input{schema-gray}
+
+\newcommand{\duedate}{12. Dezember 2016}
+
+\begin{document}
+  \frontmatter
+  \include{chapters/title}
+  \include{citation/declaration}
+
+  \include{chapters/abstract}
+
+  \cleardoublepage
+  \phantomsection
+  \pdfbookmark{Inhaltsverzeichnis}{tableofcontents}
+  \markboth{Inhaltsverzeichnis}{}
+  \tableofcontents
+
+  \mainmatter
+  \include{chapters/einleitung}
+  \include{chapters/konvergenz}
+  \include{chapters/taylor}
+  \include{chapters/konzept}
+  %\include{evaluation}
+  \include{chapters/fazit}
+  
+  \backmatter
+
+  \cleardoublepage
+  \phantomsection
+  \pdfbookmark{Abbildungsverzeichnis}{listoffigures}
+  \listoffigures
+
+  \cleardoublepage
+  \phantomsection
+  \pdfbookmark{Tabellenverzeichnis}{listoftables}
+  \listoftables
+
+
+  \include{abkuerzungen}
+
+  \cleardoublepage
+  \phantomsection
+  \pdfbookmark{Literaturverzeichnis}{bibliography}
+  \bibliography{citation/literature}
+\end{document}
